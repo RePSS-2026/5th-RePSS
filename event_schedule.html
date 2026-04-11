@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5th Vision-based Remote Physiological Signal Sensing (RePSS) Challenge & Workshop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        .navbar {
+            background-color: #000;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+        
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+	.navbar a.active {
+            font-weight: bold;
+            border-bottom: 2px solid #fff;
+        }
+.hero {
+            background-color: #666;
+            color: white;
+            padding: 50px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('1.jpg');
+            background-size: cover;
+            background-position: center 20%; 
+        }
+	.hero-text-content {
+            margin-right: 40px;
+        }
+	    
+        .hero-content {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+	justify-content: flex-end;
+        }
+        
+        .logo {
+           width: 300px;
+            margin-left: 40px; 
+            transform: translateX(20px);
+        }
+        .hero-text {
+            display: flex; 
+            align-items: center;
+            text-align: center; 
+        }
+        
+        .hero-text h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .hero-text p {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        
+        .hero-text a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        
+        .content {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .content h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .content a {
+            color: #333;
+            text-decoration: underline;
+        }
+        
+        .content ul {
+            margin-left: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .content li {
+            margin-bottom: 10px;
+        }
+
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse; 
+            margin: 30px 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            border-radius: 8px;
+            overflow: hidden; 
+			/* display: none; */
+			display: table;
+        }
+
+        .schedule-table th {
+            background-color: #333; 
+            /* color: white !important; */
+			color: #999 !important;
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+
+
+        .schedule-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #e0e0e0; 
+            vertical-align: top; 
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .schedule-table tr:hover {
+            background-color: #f0f0f0; 
+            transition: background-color 0.3s ease;
+        }
+
+        .schedule-table .time-column {
+            font-weight: bold;
+            color: #666;
+            white-space: nowrap; 
+            width: 120px;
+        }
+
+        .schedule-table .speaker-column {
+            font-weight: 600;
+            color: #333;
+            width: 200px;
+        }
+
+        .schedule-table .topic-column {
+            color: #333;
+        }
+
+        .schedule-table .break-event {
+            background-color: #e8f4f8;
+            font-style: italic;
+            color: #666;
+        }
+
+        .schedule-table .break-event:hover {
+            background-color: #d6ecf2;
+        }
+
+        @media (max-width: 768px) {
+            .schedule-table {
+                font-size: 14px;
+            }
+            
+            .schedule-table th,
+            .schedule-table td {
+                padding: 10px 8px;
+            }
+            
+            .schedule-table .time-column {
+                width: 80px;
+            }
+            
+            .schedule-table .speaker-column {
+                width: 150px;
+            }
+        }
+
+		
+        .image-gallery {
+            margin: 40px 0;
+        }
+
+        .image-gallery h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-item {
+            flex: 1;
+            min-width: calc(25% - 15px);
+            max-width: calc(25% - 15px);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            display: block;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="workshop.html">Workshop</a>
+        <a href="event_schedule.html">Event schedule</a>
+        <a href="challenge.html">Challenge</a>
+        <a href="organizers.html">Organizers</a>
+    </nav>
+    
+    <div class="hero">
+        <div class="hero-content">
+
+            <div class="hero-text">
+		<br />
+		    <br />
+		 
+		    <div class="hero-text-content">
+                <h1>The 5th RePSS - Multimodal Fusion Learning for Remote Physiological Signal Sensing</h1>
+                <!-- <p>To be held at <a href="https://2025.ijcai.org/">IJCAI 2025</a>, August 29th, 2025, Guangzhou, China</p> -->
+				<!-- <p>Chairs: Xiaobai Li, Hu Han, Antitza Dantcheva, Shiguang Shan, and Guoying Zhao</p>c z -->
+		    </div>
+		    <img src="logo-transparent.png" alt="RePSS Logo" class="logo"> 
+            </div>
+        </div>
+    </div>
+    
+    <div class="content">
+        <h2>Schedule </h2>
+		<!-- <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th class="time-column">Time</th>
+                    <th class="speaker-column">Speaker</th>
+                    <th class="topic-column">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+				<tr>
+                    <td class="time-column">08:40 - 08:55</td>
+                    <td class="speaker-column">Xiaobai Li</td>
+                    <td class="topic-column">Opening</td>
+                </tr>
+				<tr>
+                    <td class="time-column">08:55 - 09:25</td>
+                    <td class="speaker-column">Juan Cheng</td>
+                    <td class="topic-column">Invited Speaker 1: Remote HRV Monitoring via Long-Range BVP Signal Recovery</td>
+                </tr>
+				<tr>
+                    <td class="time-column">09:25 - 09:55</td>
+                    <td class="speaker-column">Jingang Shi</td>
+                    <td class="topic-column">Invited Speaker 2: Towards Real-world Remote Physiological Signal Measurement</td>
+                </tr>
+				<tr>
+                    <td class="time-column">09:55 - 10:00</td>
+                    <td class="speaker-column"></td>
+                    <td class="topic-column">Award Ceremony</td>
+                </tr>
+
+
+
+				<tr class="break-event">
+                    <td class="time-column">10:00 - 10:15</td>
+                    <td class="speaker-column"></td>
+                    <td class="topic-column">Coffee Break</td>
+                </tr>
+				<tr>
+                    <td class="time-column">10:15 - 10:30</td>
+                    <td class="speaker-column">Xiuze Jia</td>
+                    <td class="topic-column">A Frequency-Selective Multimodal Remote Physiological Signal Sensing System Based on Mamba Architecture
+</td>
+                </tr>
+				<tr>
+                    <td class="time-column">10:35 - 10:50</td>
+                    <td class="speaker-column">Boxiang Liu</td>
+                    <td class="topic-column">Remote heart rate estimation based on variational mode decomposition and lip-motion-guided artifact removal</td>
+                </tr>
+				<tr>
+                    <td class="time-column">10:55 - 11:10</td>
+                    <td class="speaker-column">Wei Qian</td>
+                    <td class="topic-column">DiffRePSS: A Diffusion model for Remote Physiological Signal Sensing</td>
+                </tr>
+				<tr>
+                    <td class="time-column">11:15 - 11:30</td>
+                    <td class="speaker-column">Zhiqin Zhou</td>
+                    <td class="topic-column">Multimodal Video-Based Heart Rate Estimation with Temporal Difference Transformer</td>
+                </tr>
+
+			</tbody>
+        </table> -->
+        
+    </div>
+
+    <script>
+	document.addEventListener('DOMContentLoaded', function() {
+    
+		const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    
+		const navLinks = document.querySelectorAll('.navbar a');
+    
+    
+		navLinks.forEach(link => {
+        
+			const linkPage = link.getAttribute('href');
+        
+        
+			if (linkPage === currentPage || 
+(currentPage === '' && linkPage === 'index.html') ||
+ (currentPage === '/' && linkPage === 'index.html')) {
+  
+		          link.classList.add('active');
+        
+			}
+    
+		});
+
+		//const urlParams = new URLSearchParams(window.location.search);
+    //if (urlParams.get('show') === '1') {
+    //    document.querySelector('.schedule-table').style.display = 'table';
+    //}
+
+	});
+
+    </script>
+</body>
+</html>
